@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 
 
 class Receta(models.Model):
-
     titulo = models.CharField(max_length=100, unique=True)
     ingredientes = models.TextField(help_text="Redacta los ingredientes")
     preparacion = models.TextField(verbose_name="Preparación")
@@ -17,7 +16,6 @@ class Receta(models.Model):
 
 
 class Comentario(models.Model):
-
     receta = models.ForeignKey(Receta)
     texto = models.TextField(help_text="Tu comentario",
     verbose_name="Comentario")
