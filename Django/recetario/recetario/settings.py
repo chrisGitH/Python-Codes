@@ -5,7 +5,7 @@ TEMPLATE_DEBUG = DEBUG
 
 # Identificando la ruta del proyecto
 import os
-PROYECT_ROUTE = os.path.dirname(os.path.realpath(__file__))
+PROJECT_ROUTE = os.path.dirname(os.path.realpath(__file__))
 
 ADMINS = (
     # ('Rajiv Rivero', 'rajiv.rivero@gmail.com'),
@@ -49,7 +49,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(PROJECT_ROUTE, 'upload')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -107,7 +107,7 @@ ROOT_URLCONF = 'recetario.urls'
 WSGI_APPLICATION = 'recetario.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROYECT_ROUTE, 'templates'),
+    os.path.join(PROJECT_ROUTE, 'templates'),
     # Put strings here, like "/home/html/django_templates" or
     # "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
