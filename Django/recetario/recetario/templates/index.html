@@ -15,12 +15,12 @@
     </header>
     <section>
         <h1>Recetario</h1>
-        <p>Actualmente tenemos registrados</p>
-        <ul>
-            {% for receta in recetas %}
-            <li>{{ receta.titulo }}</li>
+        {% for receta in recetas %}
+            {{ receta.titulo }}
+            {% for comentario in receta.comentario_set.all %}
+                {{ comentario.texto }}
             {% endfor %}
-        </ul>
+        {% endfor %}
     </section>
 </body>
 </html>

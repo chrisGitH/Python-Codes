@@ -8,6 +8,4 @@ def index(request):
     return render_to_response('index.html', {'recetas': recetas})
 
 def usuarios(request):
-    users = User.objects.all()
-    recipes = Receta.objects.all()
     return render_to_response('usuarios.html', {'users': users, 'recipes': recipes})
