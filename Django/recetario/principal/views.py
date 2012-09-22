@@ -5,7 +5,8 @@ from django.template import RequestContext
 
 def index(request):
     recetas = Receta.objects.all()
-    return render_to_response('index.html', {'recetas': recetas})
+    return render_to_response('index.html', {'recetas': recetas, 'context_intance' : RequestContext(request)})
 
 def usuarios(request):
-    return render_to_response('usuarios.html', {'users': users, 'recipes': recipes})
+    usuarios = User.objects.all()
+    return render_to_response('usuarios.html', {'usuarios': usuarios})

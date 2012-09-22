@@ -4,6 +4,27 @@
     <title></title>
 </head>
 <body>
-
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/usuarios">Usuarios</a></li>
+            <li><a href="/recetas">Recetas</a></li>
+        </ul>
+    </nav>
+</header>
+<section>
+    <h1>Colaboradores</h1>
+    <ul>
+    {% for usuario in usuarios %}
+        <li>{{ usuario.username }}</li>
+        <ul>
+        {% for receta in usuario.receta_set.all %}
+            <li>{{ receta.titulo }}</li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+    </ul>
+</section>
 </body>
 </html>

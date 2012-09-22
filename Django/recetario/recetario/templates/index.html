@@ -14,13 +14,13 @@
         </nav>
     </header>
     <section>
-        <h1>Recetario</h1>
+        <h1>Recetas registradas</h1>
+    <ul>
         {% for receta in recetas %}
-            {{ receta.titulo }}
-            {% for comentario in receta.comentario_set.all %}
-                {{ comentario.texto }}
-            {% endfor %}
+            <li>
+                {{ receta.titulo }} <br /> <img src="{{ MEDIA_URL }}{{ receta.image }}"></li>
         {% endfor %}
+    </ul>
     </section>
 </body>
 </html>
