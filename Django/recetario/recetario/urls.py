@@ -12,5 +12,6 @@ urlpatterns = patterns('',
 
     #Url de la aplicacion
     url(r'^$','principal.views.index'),
-    url(r'^usuarios/', 'principal.views.usuarios')
+    url(r'^usuarios/', 'principal.views.usuarios'),
+    url(r'^receta/(?P<id>\d+)$', 'principal.views.detalle_receta'),
 )

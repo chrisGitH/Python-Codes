@@ -16,7 +16,16 @@
 <section>
     <h1>{{ receta.titulo }}</h1>
     <p>
-        {{ receta.ingredientes }}
+        <img src="{{ MEDIA_URL }}{{ receta.image }}" />
+        Ingredientes: {{ receta.ingredientes }} <br />
+        Preparación: {{ receta.preparacion }} <br />
+    </p>
+    <p>Enviada por: {{ receta.usuario.get_full_name }} el día: {{ receta.tiempo_registro }}</p>
+    <p>
+        Comentarios:<br />
+        {% for comentario in receta.comentario_set.all %}
+            {{ comentario.pk }}.- {{ comentario.texto }} <br />
+        {% endfor %}
     </p>
 </section>
 </body>
