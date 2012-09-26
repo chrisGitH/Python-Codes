@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ receta.titulo }}</title>
-</head>
-<body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/usuarios">Usuarios</a></li>
-            <li><a href="/recetas">Recetas</a></li>
-        </ul>
-    </nav>
-</header>
-<section>
+{% extends 'base.html' %}
+{% block titulo %}{{ receta.titulo }}{% endblock %}
+{% block contenido %}
     <h1>{{ receta.titulo }}</h1>
     <p>
         <img src="{{ MEDIA_URL }}{{ receta.image }}" />
@@ -27,6 +14,4 @@
             {{ comentario.pk }}.- {{ comentario.texto }} <br />
         {% endfor %}
     </p>
-</section>
-</body>
-</html>
+{% endblock %}

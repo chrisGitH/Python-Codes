@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/usuarios">Usuarios</a></li>
-            <li><a href="/recetas">Recetas</a></li>
-        </ul>
-    </nav>
-</header>
-<section>
+{% extends 'base.html' %}
+{% block titulo %}Usuarios{% endblock %}
+{% block contenido %}
     <h1>Colaboradores</h1>
     <ul>
     {% for usuario in usuarios %}
@@ -25,6 +12,4 @@
         </ul>
     {% endfor %}
     </ul>
-</section>
-</body>
-</html>
+{% endblock %}
