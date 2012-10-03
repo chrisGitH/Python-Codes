@@ -1,7 +1,6 @@
 # Django settings for recetario project.
 import os
 
-
 # Identificando la ruta del proyecto
 PROJECT_ROUTE = os.path.dirname(os.path.realpath(__file__))
 
@@ -87,7 +86,7 @@ SECRET_KEY = '44l-0n))dyb(vg-ose1u)6#4%fwew4t8bpm@c6z3-g+8-=0z3q'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+#    'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -107,10 +106,6 @@ WSGI_APPLICATION = 'recetario.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROUTE, 'templates'),
-    # Put strings here, like "/home/html/django_templates" or
-    # "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
 )
 
 INSTALLED_APPS = (
@@ -120,9 +115,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     'principal',
 )

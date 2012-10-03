@@ -9,7 +9,7 @@ def index(request):
 
 def usuarios(request):
     usuarios = User.objects.all()
-    return render_to_response('usuarios.html', {'usuarios': usuarios})
+    return render_to_response('usuarios.html', {'usuarios': usuarios}, context_instance = RequestContext(request))
 
 def detalle_receta(request, id):
     receta = get_object_or_404(Receta, pk = id)
