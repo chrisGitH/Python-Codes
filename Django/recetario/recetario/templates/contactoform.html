@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block contenido %}
+    <form id="formulario" method="post" action=""> {% csrf_token %}
+        {{ formulario.as_p }}
+        <input type="submit">
+    </form>
+{% endblock %}

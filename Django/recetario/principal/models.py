@@ -7,7 +7,7 @@ class Receta(models.Model):
     titulo = models.CharField(max_length=100, unique=True)
     ingredientes = models.TextField(help_text="Redacta los ingredientes")
     preparacion = models.TextField(verbose_name="Preparación")
-    image = models.ImageField(upload_to="recetas", verbose_name="Imágen")
+    image = models.ImageField(upload_to="recetas", verbose_name="Imágen", )
     tiempo_registro = models.DateTimeField(auto_now=True)
     usuario = models.ForeignKey(User)
 
@@ -17,8 +17,7 @@ class Receta(models.Model):
 
 class Comentario(models.Model):
     receta = models.ForeignKey(Receta)
-    texto = models.TextField(help_text="Tu comentario",
-    verbose_name="Comentario")
+    texto = models.TextField(help_text="Tu comentario", verbose_name="Comentario")
 
     def __unicode__(self):
         return self.texto
