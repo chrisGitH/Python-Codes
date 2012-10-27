@@ -6,6 +6,8 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.mail import EmailMessage
 from django.core import serializers
+from django.contrib.auth.decorators import login_required
+
 
 def index(request):
     recetas = Receta.objects.all()
@@ -30,6 +32,7 @@ def nueva_receta(request):
         context_instance=RequestContext(request)
     )
 
+
 def comentario(request):
     if request.method == 'POST':
         form = ComentarioForm(request.POST)
@@ -43,7 +46,6 @@ def comentario(request):
         {'form': form},
         context_instance=RequestContext(request)
     )
-
 
 
 def usuarios(request):

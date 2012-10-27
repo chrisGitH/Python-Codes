@@ -26,3 +26,9 @@ def create_thumbnail():
     im = Image.open("C:\img.jpg")
     im.thumbnail(size, Image.ANTIALIAS)
     im.save("C:\img_thumbnail.jpeg", "JPEG", quality=quality)
+
+
+crop_image()
+create_thumbnail()
+
+print "Proceso terminado"

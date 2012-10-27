@@ -21,3 +21,8 @@ class Comentario(models.Model):
 
     def __unicode__(self):
         return self.texto
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    country_code = models.CharField(max_length=2)
